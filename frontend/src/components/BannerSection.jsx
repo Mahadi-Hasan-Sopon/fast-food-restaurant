@@ -5,9 +5,9 @@ import BannerImage from "../assets/Image1.png";
 
 const BannerSection = () => {
   return (
-    <ContainerBox styles={"md:my-32 md:px-10 px-4 my-14"}>
-      <div className="grid md:flex gap-6 justify-between md:bg-primaryOrange rounded-3xl">
-        <div className="content md:pl-[104px] md:pt-[74px] w-full md:w-1/2">
+    <ContainerBox styles={"md:my-[128px] md:px-10 px-4 my-14"}>
+      <div className="grid md:flex md:gap-6 justify-between md:bg-primaryOrange rounded-3xl">
+        <div className="content md:pl-[104px] md:pt-[74px] w-full md:w-1/2 min-h-28">
           <h1 className="text-3xl md:text-[40px] font-bold md:leading-tight text-center md:text-left">
             <Typewriter
               words={["Deliver Food To Your Door Step"]}
@@ -34,12 +34,13 @@ const BannerSection = () => {
             Quick Service, Fast Delivery
           </p>
         </div>
-        <div className="image w-full md:w-1/2">
+        <div className="image w-full md:w-1/2 relative">
           <img
-            className="max-w-full max-h-full h-80"
+            className="max-w-full max-h-80 h-full "
             src={BannerImage}
             alt="banner Image"
           />
+          <div className="md:hidden absolute left-0 -bottom-1 -z-10 w-full h-4/6 bg-[#FD9460] rounded-3xl"></div>
         </div>
       </div>
     </ContainerBox>
