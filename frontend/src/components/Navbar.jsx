@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="Nav flex justify-between gap-6 items-center w-full my-8 pr-2">
+    <div className="Nav flex justify-between gap-6 items-center w-full my-5 py-3 px-4 md:px-10 border-b-2 border-slate-200 border-opacity-50 md:border-none">
       <a
         href="/"
         className="text-3xl font-bold font-ubuntu text-black no-underline block"
@@ -29,10 +29,10 @@ const Navbar = () => {
         pti.
       </a>
 
-      <div className="searchAndMenu flex gap-4 items-center font-poppins">
+      <div className="searchAndMenu flex gap-2 items-center font-poppins">
         <div className="flex gap-2 items-center relative w-full">
           <input
-            className="md:w-[450px] lg:w-[510px] w-full block h-11 rounded-xl px-11 relative placeholder:font-poppins placeholder:text-slate-500 focus:outline-none"
+            className="md:w-[450px] lg:w-[510px] w-full block h-10 md:h-11 rounded md:rounded-xl pl-11 pr-4 relative placeholder:font-poppins placeholder:text-slate-400 placeholder:opacity-55 focus:outline-none"
             type="text"
             placeholder="Search Audiobook"
           />
@@ -41,10 +41,10 @@ const Navbar = () => {
 
         <FormControl
           sx={{
-            minWidth: 170,
+            minWidth: { xs: 130, md: 170 },
             position: "relative",
             bgcolor: "white",
-            borderRadius: 3,
+            borderRadius: { xs: 1, md: 3 },
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
                 border: "none",
@@ -56,7 +56,7 @@ const Navbar = () => {
             htmlFor="menu"
             className={`${
               menuItem && "hidden "
-            } font-semibold absolute top-1/2 mt-0.5 left-4 -translate-y-1/2 cursor-pointer`}
+            } font-semibold absolute top-1/2 left-4 -translate-y-1/2 cursor-pointer text-lg`}
           >
             MENU
           </label>
@@ -71,6 +71,7 @@ const Navbar = () => {
                 fontWeight: menuItem ? "medium" : "normal",
                 outline: "none",
                 border: "none",
+                padding: { xs: "10px 14px", md: "12px 14px" },
               },
             }}
             MenuProps={{
@@ -115,7 +116,7 @@ const Navbar = () => {
           </Select>
         </FormControl>
       </div>
-      <div className="avatar">
+      <div className="avatar hidden md:block">
         <Avatar
           alt="avatar"
           sx={{ width: 48, height: 48, bgcolor: "#FD6011", cursor: "pointer" }}
