@@ -37,7 +37,7 @@ The project is built using the following tools and libraries:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/fast-food-restaurant.git
+   git clone https://github.com/Mahadi-Hasan-Sopon/fast-food-restaurant.git
    ```
 2. Navigate to the project directory:
    ```sh
