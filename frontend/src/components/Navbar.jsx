@@ -36,7 +36,7 @@ const Navbar = () => {
             type="text"
             placeholder="Search Audiobook"
           />
-          <SearchOutlinedIcon className="absolute top-1/2 mt-0.5 left-4 -translate-y-1/2 text-secondaryOrange opacity-80" />
+          <SearchOutlinedIcon className="absolute top-1/2 mt-0.5 left-4 -translate-y-1/2 text-buttonIconOrange opacity-80" />
         </div>
 
         <FormControl
@@ -64,7 +64,7 @@ const Navbar = () => {
             value={menuItem}
             onChange={handleMenuItemClick}
             displayEmpty
-            className="hove:cursor-pointer text-secondaryOrange"
+            className="hove:cursor-pointer text-buttonIconOrange"
             sx={{
               "& .MuiSelect-select": {
                 color: menuItem ? "#FD6011" : "inherit",

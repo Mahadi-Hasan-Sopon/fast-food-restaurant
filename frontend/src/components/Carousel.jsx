@@ -103,21 +103,32 @@ const Carousel = ({
           slidesPerView={5}
           spaceBetween={15}
           modules={[Navigation]}
-          className={`${carouselId}Swiper h-80`}
+          className={`${carouselId}Swiper md:h-80 h-full`}
           navigation={{
             nextEl: `#${carouselId}-next`,
             prevEl: `#${carouselId}-prev`,
           }}
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 2.5,
+              spaceBetween: 20,
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 15,
+            },
+          }}
         >
           {carouselItems.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full h-full relative rounded-2xl overflow-hidden flex flex-col items-center">
+              <div className="w-full md:h-full relative rounded-2xl overflow-hidden flex flex-col items-center">
                 <img
-                  className="max-w-full max-h-[265px] h-full object-cover rounded-2xl"
+                  className="max-w-full h-52 max-h-[265px] md:h-full object-contain rounded-2xl duration-700 transform scale-100 transition-transform ease-in-out hover:scale-150"
                   src={item.ImageUrl}
                   alt=""
                 />
-
                 <p className="text-base mt-3">{item.Name}</p>
               </div>
             </SwiperSlide>

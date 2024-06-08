@@ -6,7 +6,6 @@ export default {
       colors: {
         bgPrimary: "#EEEFF0",
         primaryOrange: "#F99F1C",
-        secondaryOrange: "#FD6011",
         buttonIconOrange: "#FC6011",
       },
       fontFamily: {

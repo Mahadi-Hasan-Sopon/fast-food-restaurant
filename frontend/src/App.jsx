@@ -8,42 +8,46 @@ import { StoreContext } from "./context/StoreContextProvider";
 function App() {
   // eslint-disable-next-line no-unused-vars
   const { foodItems, addItem } = useContext(StoreContext);
+  // const [popularItems, setPopularItems] = useState([]);
+  // const [recommendedItems, setRecommendedItems] = useState([]);
 
   const addFoot = (foodDetails) => {
     // addItem(foodDetails);
     console.log(foodDetails);
   };
 
-  const popularItems = foodItems?.Items.filter((item) => item.IsPopular);
+  // console.log({ foodItems, localFoodData, from: "in App.jsx" });
 
-  const recommendedItems = foodItems?.Items.filter(
+  const popularItemsFilter = foodItems?.Items?.filter((item) => item.IsPopular);
+
+  const recommendedItemsFilter = foodItems?.Items?.filter(
     (item) => item.IsRecommended
   );
+
+  // console.log({ popularItemsFilter, recommendedItemsFilter });
 
   return (
     <div className="font-poppins pb-96">
       <ContainerBox>
         <Navbar />
         <BannerSection />
-        <div className="popularCarousel-section px-4 md:pl-10">
+        <div className="popularCarousel-section px-4 md:pl-10 pt-12 md:pt-0">
           <Carousel
             carouselId="popularCarousel"
-            carouselItems={popularItems}
+            carouselItems={popularItemsFilter}
             carouselTitle="Popular"
             buttonText="AddMore"
             addFood={addFoot}
           />
         </div>
-        <div className="recommendedCarousel-section px-4 md:pl-10">
-          <div className="my-8">
-            <Carousel
-              carouselId="recommendedCarousel"
-              carouselItems={recommendedItems}
-              carouselTitle="Recommended"
-              buttonText="AddMore"
-              addFood={addFoot}
-            />
-          </div>
+        <div className="recommendedCarousel-section px-4 md:pl-10 mt-12 md:mt-8 mb-16 md:mb-28">
+          <Carousel
+            carouselId="recommendedCarousel"
+            carouselItems={recommendedItemsFilter}
+            carouselTitle="Recommended"
+            buttonText="AddMore"
+            addFood={addFoot}
+          />
         </div>
       </ContainerBox>
     </div>
