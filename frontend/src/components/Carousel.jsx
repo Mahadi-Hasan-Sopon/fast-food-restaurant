@@ -44,7 +44,7 @@ const Carousel = ({
     const newFood = {
       Id: uuid(),
       Name: data.Name,
-      Price: data.Price,
+      Price: Number(data.Price),
       ImageUrl: data.ImageUrl,
       IsPopular: data.IsPopular,
       IsRecommended: data.IsRecommended,
@@ -126,7 +126,7 @@ const Carousel = ({
             <SwiperSlide key={index}>
               <div className="slide-section w-full md:h-full relative rounded-2xl overflow-hidden flex flex-col items-center">
                 <img
-                  className={`max-w-full h-52 max-h-[265px] md:h-full ${
+                  className={`max-w-full h-48 max-h-[265px] md:h-full ${
                     IsApiData
                       ? "object-cover hover:scale-110 duration-400 transition-transform ease-in-out"
                       : "object-contain duration-700 transform scale-100 transition-transform ease-in-out hover:scale-150"

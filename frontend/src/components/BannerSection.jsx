@@ -5,7 +5,7 @@ import BannerImage from "../assets/Image1.png";
 
 const BannerSection = () => {
   return (
-    <ContainerBox styles={"md:my-[128px] md:px-10 px-4 my-16"}>
+    <ContainerBox styles={"md:my-[128px] md:px-10 px-4 my-12"}>
       <div className="flex flex-col md:flex-row gap-y-16 md:gap-y-4 md:gap-6 justify-between md:bg-primaryOrange rounded-3xl">
         <div className="content w-full h-auto md:w-1/2 md:pl-[104px] md:pt-[74px] min-h-28 mb-10 md:mb-0">
           <h1 className="text-3xl text-slate-800 md:text-slate-200 md:text-[40px] font-semibold md:leading-tight text-center md:text-left h-24 max-h-28 md:h-full">
