@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
-  const [foodItems, setFoodItems] = useState({ Items: [], TotalCount: 0 });
+  const [foodItems, setFoodItems] = useState({
+    Items: [],
+    TotalCount: 0,
+    IsApiData: false,
+  });
   // const [localFoodData, setLocalFoodData] = useState({
   //   Items: [],
   //   TotalCount: 0,
@@ -17,7 +21,7 @@ const StoreContextProvider = ({ children }) => {
           "http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10"
         );
         const data = await response.json();
-        setFoodItems(data);
+        setFoodItems({ ...data, IsApiData: true });
       } catch (err) {
         console.log((err?.message || err) + " from online API.");
         localFoodData();
@@ -28,7 +32,7 @@ const StoreContextProvider = ({ children }) => {
       try {
         const localResponse = await fetch("/fakeData.json");
         const localData = await localResponse.json();
-        setFoodItems(localData);
+        setFoodItems({ ...localData, IsApiData: false });
       } catch (localErr) {
         console.error("Error fetching local data:", localErr);
       }

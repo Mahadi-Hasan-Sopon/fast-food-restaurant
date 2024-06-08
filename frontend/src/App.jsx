@@ -4,6 +4,7 @@ import BannerSection from "./components/BannerSection";
 import Carousel from "./components/Carousel";
 import { useContext } from "react";
 import { StoreContext } from "./context/StoreContextProvider";
+import Footer from "./components/Footer";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -26,8 +27,10 @@ function App() {
 
   // console.log({ popularItemsFilter, recommendedItemsFilter });
 
+  // console.log(foodItems?.IsApiData);
+
   return (
-    <div className="font-poppins pb-96">
+    <div className="font-poppins">
       <ContainerBox>
         <Navbar />
         <BannerSection />
@@ -38,6 +41,7 @@ function App() {
             carouselTitle="Popular"
             buttonText="AddMore"
             addFood={addFoot}
+            IsApiData={foodItems?.IsApiData}
           />
         </div>
         <div className="recommendedCarousel-section px-4 md:pl-10 mt-12 md:mt-8 mb-16 md:mb-28">
@@ -47,9 +51,11 @@ function App() {
             carouselTitle="Recommended"
             buttonText="AddMore"
             addFood={addFoot}
+            IsApiData={foodItems?.IsApiData}
           />
         </div>
       </ContainerBox>
+      <Footer />
     </div>
   );
 }
